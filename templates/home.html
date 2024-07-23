@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if pretty != null%}
+    <button><a href="{{url_for('googleLogin')}}">Login with google</a></button>
+    <button><a href="{{url_for('logout')}}">Logut</a></button>
+    <div><pre>'Hello {{pretty}}'</pre>
+        <pre>'This is your Email : {{pretty}}'</pre>
+    </div>
+    {%else%}
+    <button><a href="{{url_for('googleLogin')}}">Login with google</a></button>
+    {% endif %}
+</body>
+</html>
