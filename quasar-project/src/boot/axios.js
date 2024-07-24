@@ -8,7 +8,6 @@ import vue3GoogleLogin from 'vue3-google-login'
 // good idea to move this instance creation inside of the
 // "export default () => {}" function below (which runs individually
 // for each client)
-//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
 const api = axios.create({ baseURL: 'https://api.example.com'},{
   headers: {
       'Content-Type': 'application/json',
@@ -18,7 +17,7 @@ const api = axios.create({ baseURL: 'https://api.example.com'},{
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
   app.use(vue3GoogleLogin, {
-    clientId: '220563333877-ufu5dunsmssl9q382p2080ab61dsrdin.apps.googleusercontent.com'
+    clientId: 'your id'
   })
   app.config.globalProperties.$axios = axios
   // ^ ^ ^ this will allow you to use this.$axios (for Vue Options API form)

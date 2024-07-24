@@ -8,8 +8,8 @@ from google.auth.transport import requests
 app = Flask(__name__)
 CORS(app)
 appConf = {
-    "OAUTH2_CLIENT_ID":"65896343084-arc4inpsmt2fl459cl2b7iik3gagbm08.apps.googleusercontent.com",
-    "OAUTH2_CLIENT_SECRET":"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",
+    "OAUTH2_CLIENT_ID":"your id",
+    "OAUTH2_CLIENT_SECRET":"your secrete key",
     "OAUTH2_META_URL":"https://accounts.google.com/.well-known/openid-configuration",
     "FLASK_SECRET":"bcd89865-59ee-45f1-96e3-d3841c358c4b",
     "FLASK_PORT":5000
@@ -53,7 +53,7 @@ def logout():
 @app.route('/api/userdetails', methods = ["POST","GET"])
 def userdetails():
     user_data = request.get_json(silent=True)
-    idinfo = id_token.verify_oauth2_token(user_data['credential'], requests.Request(), '220563333877-ufu5dunsmssl9q382p2080ab61dsrdin.apps.googleusercontent.com')
+    idinfo = id_token.verify_oauth2_token(user_data['credential'], requests.Request(), 'your id')
     session['user'] = idinfo
     session_value=session.get("user")
     # json_object = json.dumps(session_value, indent = 4) 
